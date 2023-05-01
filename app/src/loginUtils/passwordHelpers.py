@@ -1,11 +1,11 @@
 from passlib.context import CryptContext
 import starlette.status as status
-from src.models.UserModels import *
-from src.loginUtils.passwordHelpers import *
-from src.loginUtils.tokenHelpers import *
+from ..models.UserModels import *
+from ..loginUtils.passwordHelpers import *
+from ..loginUtils.tokenHelpers import *
 from pydantic import BaseModel
 
-from src.sql import models
+from ..sql import models
 
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 
