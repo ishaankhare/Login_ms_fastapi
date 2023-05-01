@@ -1,7 +1,7 @@
 from fastapi import Request, HTTPException, Response
-from src.loginUtils.tokenHelpers import *
+from ..loginUtils.tokenHelpers import *
 
-from src.loginUtils.tokenHelpers import validate_token
+from ..loginUtils.tokenHelpers import validate_token
 
 def get_token(request: Request, response: Response):
     token = request.cookies['signInToken']

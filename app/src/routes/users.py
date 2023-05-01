@@ -3,12 +3,12 @@ from fastapi.responses import RedirectResponse
 import starlette.status as status
 from fastapi.encoders import jsonable_encoder
 from fastapi.responses import JSONResponse
-from src.models.UserModels import *
-from src.loginUtils.passwordHelpers import *
+from ..models.UserModels import *
+from ..loginUtils.passwordHelpers import *
 from jose import JWTError, jwt
 from datetime import datetime, timedelta
-from src.loginUtils.tokenHelpers import *
-from src.dependencies.tokenValidation import *
+from ..loginUtils.tokenHelpers import *
+from ..dependencies.tokenValidation import *
 
 fake_users_db = {
     "ishaan": {
