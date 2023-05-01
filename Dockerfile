@@ -1,13 +1,13 @@
 # syntax=docker/dockerfile:1
 
-FROM python:3.8-slim-buster
+FROM tiangolo/uvicorn-gunicorn-fastapi:python3.9
 
 WORKDIR /app
 
 COPY requirements.txt requirements.txt
-RUN pip3 install -r requirements.txt
 
-COPY . .
+RUN pip install --no-cache-dir --upgrade -r /app/requirements.txt
 
-CMD ["python3", "-m" , "uvicorn", "app.main:app", "--reload", "--host=0.0.0.0"]
+COPY ./app /app
 
+CMD ["python3", "-m" , "uvicorn", "main:app", "--reload", "--host=0.0.0.0"]
