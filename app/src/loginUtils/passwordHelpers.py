@@ -1,19 +1,11 @@
 from passlib.context import CryptContext
-from fastapi import FastAPI, Response
-from typing import List
-from fastapi import Depends, FastAPI, HTTPException
-from fastapi.responses import RedirectResponse
 import starlette.status as status
 from src.models.UserModels import *
 from src.loginUtils.passwordHelpers import *
 from src.loginUtils.tokenHelpers import *
-from sqlalchemy.orm import Session
 from pydantic import BaseModel
-from typing import Any
-from src.routes.users import usersroute
 
-from src.sql import models, database, schemas
-from src.sql.database import SessionLocal, engine
+from src.sql import models
 
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 
